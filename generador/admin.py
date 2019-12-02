@@ -5,8 +5,9 @@ class DireccionesAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'prefijo')
 
 class ContrasenasAdmin(admin.ModelAdmin):
-    list_display = ('nombres', 'apellidos', 'direccion', 'contrasena')
+    list_display = ('nombres', 'apellidos', 'direccion', 'contrasena', 'hecho')
     list_filter = ('direccion__nombre',)
+    list_display_links = ('contrasena',)
 
 
 

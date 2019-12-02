@@ -18,6 +18,8 @@ class Contrasenas(models.Model):
     nombres = models.CharField(max_length=200)
     apellidos = models.CharField(max_length=200)
     direccion = models.ForeignKey(Direcciones, on_delete = models.PROTECT, related_name= 'dir')
+    hecho = models.BooleanField(default = False)
+    timestamp = models.DateTimeField(auto_now_add = True, null = True)
     contrasena = models.CharField('Contraseña', max_length = 50, unique = True, null = True, blank = True, editable = False)
     
     class Meta:
